@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome checker</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <h2>Palindrome checker</h2>
+        <div class="Inputdiv">
+            <input type="text" id="input" placeholder="Input">
+
+        </div>
+        <div>
+            <button type="submit" id="check">Check</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</body>
+<script>
+    let btn = document.getElementById("check");
+
+btn.addEventListener("click", () => {
+    let str = document.getElementById("input").value.toLowerCase(); // Convert and assign the lowercase string
+    let rev = "";
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        rev += str[i];
+    }
+
+    let result = document.getElementById("result");
+    if (rev === str) {
+        result.innerHTML = "True"; // It's a palindrome
+    } else {
+        result.innerHTML = "False"; // Not a palindrome
+    }
+});
+
+</script>
+
+</html>
